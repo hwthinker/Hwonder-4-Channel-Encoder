@@ -1,0 +1,3 @@
+Before starting the program, please flash the Raspberry Pi image first. 
+
+For more detailed information, please refer to the tutorials in "03 Software Tool/01 Image & Tool" in the same path as this file to flash the corresponding version of the Raspberry Pi image to the SD card.

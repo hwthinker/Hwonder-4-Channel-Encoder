@@ -1,0 +1,5 @@
+-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I.\CORE -I.\STM32F10x_FWLib\inc -I.\USER 
+-I C:\Keil\ARM\RV31\INC 
+-I C:\Keil\ARM\CMSIS\Include 
+-I C:\Keil\ARM\Inc\ST\STM32F10x 
+-DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -o ".\Obj\robotrun.o" --omf_browse ".\Obj\robotrun.crf" --depend ".\Obj\robotrun.d" "USER\RobotRun.c"

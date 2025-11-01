@@ -1,12 +1,12 @@
 #include <Wire.h>
 #include <Arduino.h>
 
-// ==== KONFIG I2C ESP32 ====
+// ==== KONFIG I2C ESP32 S3 Uno====
 // Sesuaikan dengan wiring Anda:
-// Contoh pakai bus utama: SDA=21, SCL=22
+// Contoh pakai bus utama: SDA=8, SCL=9
 // Jika perlu bus terpisah (mis. IMU/OLED di 18/19), pindahkan modul motor ke 21/22.
-#define I2C_SDA 21
-#define I2C_SCL 22
+#define I2C_SDA 8
+#define I2C_SCL 9
 #define I2C_FREQ 100000  // 100 kHz untuk stabilitas
 
 #define I2C_ADDR        0x34
@@ -45,8 +45,9 @@ static bool writeArray(uint8_t reg, const uint8_t* val, size_t len) {
 
 static int readArray(uint8_t reg, uint8_t* val, size_t len) {
   if (!writeByte(reg)) return -1;
-  delayMicroseconds(300); // beri waktu perangkat menyiapkan data
+  //delayMicroseconds(300); // beri waktu perangkat menyiapkan data
   size_t n = Wire.requestFrom((int)I2C_ADDR, (int)len);
+  
   if (n != len) return -1;
   for (size_t i=0; i<len; ++i) val[i] = Wire.read();
   return (int)len;
